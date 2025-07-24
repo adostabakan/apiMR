@@ -12,9 +12,9 @@ def classify_stage(tumor_ratio, nodule_count):
         score += 2
 
     # 🔢 Nodül sayısı skoru
-    if nodule_count == 1:
+    if nodule_count <= 2:
         score += 0
-    elif 2 <= nodule_count <= 3:
+    elif 2 <= nodule_count <= 5:
         score += 1
     else:  # 4 veya daha fazla
         score += 2
@@ -25,4 +25,4 @@ def classify_stage(tumor_ratio, nodule_count):
     elif 1 <= score <= 2:
         return "Orta Evre (B)"
     else:
-        return "İleri Evre (C)"
+        return "Kritik Evre (C)"
